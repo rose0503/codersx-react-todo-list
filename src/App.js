@@ -1,30 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Todo from './components/todo.js'
 
-const todos = ["Go to market", "Buy food", "Make dinner"];
-// const items = []
-
-// for (let a of todos ){
-//   items.push(<li>{a}</li>)
-// }
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          App ToDoList
-        </p>      
-        <ul>
-          {/* {items} */}
-          {todos.map((value) => {
-            return <li>{value}</li>
-          })}
-        </ul>         
-          
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super();
+    this.todos = ["Go to market", "Buy food", "Make dinner"];
+  }
+  render(){
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h2>
+            App ToDoList
+          </h2>      
+          <Todo todos={this.todos} />       
+        </header>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
